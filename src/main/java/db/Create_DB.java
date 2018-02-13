@@ -30,11 +30,12 @@ public class Create_DB {
 
 
         DaoOrders daoOrders = new DaoOrders();
+
       /*  daoOrders.insert(new Orders(new Users("User12345", "Password12345", "Uesr12345@mail.com", "123456789",
                 "New York, Time Square - 1/2", 20, "21.01.1998", "TV"),new Products("bread", 2),1,2,"11:01:1987"));
                 */
       //  daoOrders.insert(new Orders(user, products, 1, 2, "11:01:1987"));
-        daoOrders.insert(new Orders(1, 1, 1, 2, "11:01:1987"));
+        daoOrders.insert(new Orders(1, 1, 1, 2));
 
 
 

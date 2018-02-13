@@ -35,6 +35,10 @@ public class Users implements Serializable {
     @Column(name = "del_status", columnDefinition = "INT DEFAULT 1")
     private int del_status;
 
+    public Users (int id){
+        this.id = id;
+    }
+
     public Users() {
 
     }

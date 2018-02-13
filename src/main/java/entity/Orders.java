@@ -1,6 +1,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.*;
@@ -28,12 +30,12 @@ public class Orders implements Serializable {
     public Orders() {
     }
 
-    public Orders(int user_id, int product_id, int quantity, int price, String date) {
+    public Orders(int user_id, int product_id, int quantity, int price) {
         this.user_id = user_id;
         this.product_id = product_id;
         this.quantity = quantity;
         this.price = price;
-        this.date = date;
+        this.date = new SimpleDateFormat("yyyy.MM.dd").format(new Date());
         this.status_id = 1;
     }
 /* public Orders(Users user_id, Products product_id, int quantity, int price, String date) {

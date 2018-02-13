@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
@@ -54,20 +54,31 @@
 
             </div>
             <div class="col-md-6">
-                <div class="col-md-1"></div>
-                <div class="col-md-9">
+                <div class="col-md-4">
+                    <ul class="nav navbar-nav">
+                        <div class="container-fluid" style="padding-top: 7px">
+                            <form action="/buy" method="POST" role="form" class="form-inline">
+
+                                <button type="submit" class="btn btn-default">LogOut
+                                    <span class="glyphicon glyphicon-ok" style="font-size:15px"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </ul>
+
+                </div>
+                <div class="col-md-4">
                     <div class="form-group">
-                        <h5>Ваш логин: <c:out value = "${loggedIn}"></c:out></h5>
-                        <h5><c:out value = "${RegOk}"></c:out></h5>
+                        <h5>Ваш логин: <c:out value="${loggedIn}"></c:out></h5>
+                        <h5><c:out value="${RegOk}"></c:out></h5>
 
 
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <ul class="nav navbar-nav">
                         <div class="container-fluid" style="padding-top: 7px">
-                            <form action="/" method="POST" role="form" class="form-inline"
-                                  onsubmit="if(testLogin(this)&&testPasswordOnly(this)){return true;}else{return false;}">
+                            <form action="/" method="POST" role="form" class="form-inline">
 
                                 <button type="submit" class="btn btn-default">LogOut
                                     <span class="glyphicon glyphicon-ok" style="font-size:15px"></span>
@@ -84,17 +95,76 @@
 
 <div class="row" style="padding-top: 5%">
     <div class="col-md-4">
-        <%@ include file="/WEB-INF/views/menu.jsp"%>
+        <%@ include file="/WEB-INF/views/menu.jsp" %>
+    </div>
+    <div class="col-md-2">
+        <nav class="navbar navbar-default" role="itemBox" style="min-height: 250px; position: relative;">
+            <form action="/gta" method="POST" role="form" class="form-inline">
+                <input type="image" src="/img/GTA.jpg" style="position: absolute; left: 20px; top:20px">
+                <button type="submit" name="gta" class="btn btn-default"
+                        style="position: absolute; bottom: 5px; left: 30% "> Buy
+                    <span class="glyphicon glyphicon-euro" name="euro" style="font-size:15px"></span>
+                </button>
+            </form>
+        </nav>
+
+        <nav class="navbar navbar-default" role="itemBox" style="min-height: 250px; position: relative;">
+            <form>
+                <input type="image" src="/img/battlefild.jpeg" name="btf"
+                       style="position: absolute; left: 20px; top:20px">
+                <button type="submit" class="btn btn-default" style="position: absolute; bottom: 5px; left: 30% "> Buy
+                    <span class="glyphicon glyphicon-euro" name="euro" style="font-size:15px"></span>
+                </button>
+            </form>
+        </nav>
+
+        <nav class="navbar navbar-default" role="itemBox" style="min-height: 250px; position: relative;">
+            <form>
+                <input type="image" src="/img/fallout4.jpg" name="ft4" style="position: absolute; left: 20px; top:20px">
+                <button type="submit" class="btn btn-default" style="position: absolute; bottom: 5px; left: 30% "> Buy
+                    <span class="glyphicon glyphicon-euro" name="euro" style="font-size:15px"></span>
+                </button>
+            </form>
+        </nav>
+
     </div>
 
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
+    <div class="col-md-2">
+        <nav class="navbar navbar-default" role="itemBox" style="min-height: 250px; position: relative;">
+            <form>
+                <input type="image" src="/img/horizon.jpeg" name="hrz" style="position: absolute; left: 20px; top:20px">
+                <button type="submit" class="btn btn-default" style="position: absolute; bottom: 5px; left: 30% "> Buy
+                    <span class="glyphicon glyphicon-euro" name="euro" style="font-size:15px"></span>
+                </button>
+            </form>
+        </nav>
 
+        <nav class="navbar navbar-default" role="itemBox" style="min-height: 250px; position: relative;">
+            <form>
+                <input type="image" src="/img/MH.jpeg" name="mh" style="position: absolute; left: 20px; top:20px">
+                <button type="submit" class="btn btn-default" style="position: absolute; bottom: 5px; left: 30% "> Buy
+                    <span class="glyphicon glyphicon-euro" name="euro" style="font-size:15px"></span>
+                </button>
+            </form>
+        </nav>
 
+        <nav class="navbar navbar-default" role="itemBox" style="min-height: 250px; position: relative;">
+            <form>
+                <input type="image" src="/img/dest.jpg" name="dst" style="position: absolute; left: 20px; top:20px">
+                <button type="submit" class="btn btn-default" style="position: absolute; bottom: 5px; left: 30% "> Buy
+                    <span class="glyphicon glyphicon-euro" name="euro" style="font-size:15px"></span>
+                </button>
+            </form>
+        </nav>
+
+    </div>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-2"></div>
 </div>
 </body>
 <footer>
-
+    <h1><c:out value="${State}"></c:out></h1>
 </footer>
 </html>
 

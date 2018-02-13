@@ -19,6 +19,10 @@ public class AuthorizathionController {
         DaoUsers du = new DaoUsers();
         List<Users> list = du.getAll("FROM Users WHERE Login = '" + newLogin + "' AND Password = '" + newPassword + "'");
         if(!list.isEmpty()){
+            //session.setAttribute("login");
+
+            session.setAttribute("user", list.get(0));
+            System.out.println(session.getAttribute("user"));
             model.addAttribute("loggedIn",newLogin);
             model.addAttribute("RegOk","Авторизация прошла успешно!");
             return "index3";
@@ -27,7 +31,7 @@ public class AuthorizathionController {
         System.out.println(list);
         System.out.println(newLogin + " " + newPassword);
         System.out.println("Регистрация не прошла");
-        model.addAttribute("BadReg","Авторизация не прошла!");
+        model.addAttribute("RegOk","Авторизация не прошла!");
         return "index";
 
     }

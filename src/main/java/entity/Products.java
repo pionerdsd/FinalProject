@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "products")
+@Table(name = "Products")
 public class Products implements Serializable {
 
     private static final long serialVersionUID = 1360012347011186431L;
@@ -25,6 +25,10 @@ public class Products implements Serializable {
     private int productcode;
 
     public Products() {
+    }
+
+    public Products(int id) {
+        this.id = id;
     }
 
     public Products(String type, int price) {
@@ -74,7 +78,7 @@ public class Products implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
+    @Column(name = "id")
     public int getId() {
         return id;
     }
